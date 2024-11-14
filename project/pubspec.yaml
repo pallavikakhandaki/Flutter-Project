@@ -1,0 +1,54 @@
+name: project
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  animated_notch_bottom_bar: ^1.0.0
+  flutter_svg: ^2.0.7
+  flutter_switch: ^0.3.2
+  google_fonts: ^6.2.1
+  image_picker: ^1.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons8-search.svg
+    - assets/three-dots-svgrepo-com.svg
+    - assets/clock-svgrepo-com (1).svg
+    - assets/instagram-tag-icon.svg
+    - assets/dolly.jfif
+    - assets/recipe2.jfif
+    - assets/recipe3.jfif
+    - assets/salad.jpg
+    - assets/cookprofile.jfif
+    - assets/punnet.jfif
+    - assets/dosa.jfif
+    - assets/images/image.webp
+    - assets/images/image2.jpg
+    - assets/images/chef.jpg
+    - assets/images/tomato.jpg
+    - assets/images/cabbage.jpg
+    - assets/images/green_onion.jpg
+    - assets/logout-svgrepo-com.svg
+    - assets/moon-stars-svgrepo-com.svg
+    - assets/profile-svgrepo-com.svg
+    - assets/support-svgrepo-com.svg
+    - assets/signing-the-contract-svgrepo-com.svg
+    - assets/document-text-svgrepo-com.svg
+    - assets/profileimg.jpg
+    - assets/crown.png
+    - assets/title.png
+    - assets/ingredient.png
+    - assets/cancel.svg
+    - assets/procedure.png
