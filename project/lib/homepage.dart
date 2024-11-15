@@ -15,22 +15,22 @@ class _HomeScreenState extends State<HomeScreen> {
       context: context,
       isScrollControlled: true, // Allows the bottom sheet to expand
       builder: (context) {
-        return Container(
+        return SizedBox(
           height: MediaQuery.of(context).size.height *
               0.8, // Set to 80% of the screen height
           child: Column(
             children: [
-              Container(
+              SizedBox(
                   height: 50,
-                  child: Center(
+                  child: const Center(
                       child: Text(
                     "Notifications",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                   ))),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Notify(),
+              const Notify(),
 
             ],
           ),
@@ -52,9 +52,9 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       'Hello Fola',
                       style: TextStyle(
@@ -78,14 +78,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           onPressed: () {
                             openBottomSheet();
                           },
-                          icon: Icon(Icons.notifications)),
-                      SizedBox(
+                          icon: const Icon(Icons.notifications)),
+                      const SizedBox(
                         width: 10,
                       ),
                       GestureDetector(
                         onTap: (){
                         },
-                        child: CircleAvatar(
+                        child: const CircleAvatar(
                           backgroundImage: AssetImage("assets/dolly.jfif"),
                           backgroundColor: Colors.orangeAccent,
                         ),
@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: 'Search recipe',
-                      prefixIcon: Icon(Icons.search),
+                      prefixIcon: const Icon(Icons.search),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
                         borderSide: BorderSide.none,
@@ -128,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 40,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: [
+                children: const [
                   CategoryTab(text: 'All', isSelected: true),
                   CategoryTab(text: 'Indian'),
                   CategoryTab(text: 'Italian'),
@@ -138,11 +138,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            SingleChildScrollView(
+            const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   RecipeCard(
                     image: 'assets/salad.jpg',
                     title: 'Classic Greek Salad',
@@ -214,8 +214,7 @@ class CategoryTab extends StatelessWidget {
   final String text;
   final bool isSelected;
 
-  const CategoryTab({required this.text, this.isSelected = false, Key? key})
-      : super(key: key);
+  const CategoryTab({required this.text, this.isSelected = false, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -247,8 +246,8 @@ class RecipeCard extends StatefulWidget {
     required this.title,
     required this.time,
     required this.rating,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   _RecipeCardState createState() => _RecipeCardState();
@@ -273,7 +272,7 @@ class _RecipeCardState extends State<RecipeCard> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        SizedBox(
           height: 40,
           width: 180,
         ),
@@ -298,7 +297,7 @@ class _RecipeCardState extends State<RecipeCard> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(height: 110),
+                  const SizedBox(height: 110),
                   Text(
                     widget.title,
                     textAlign: TextAlign.center,
@@ -308,15 +307,15 @@ class _RecipeCardState extends State<RecipeCard> {
                       fontSize: 20,
                     ),
                   ),
-                  Expanded(child: SizedBox()),
+                  const Expanded(child: SizedBox()),
                   Row(
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'Time',
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Color.fromARGB(255, 79, 74, 74)),
                           ),
                           Text(
@@ -327,7 +326,7 @@ class _RecipeCardState extends State<RecipeCard> {
                           ),
                         ],
                       ),
-                      Expanded(child: SizedBox()),
+                      const Expanded(child: SizedBox()),
                       Column(
                         children: [
                           Row(
@@ -350,9 +349,9 @@ class _RecipeCardState extends State<RecipeCard> {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 10),
+                              const SizedBox(width: 10),
                               Container(
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: Colors.white),
                                 child: Padding(
@@ -365,7 +364,7 @@ class _RecipeCardState extends State<RecipeCard> {
                               ),
                             ],
                           ),
-                          SizedBox(width: 10),
+                          const SizedBox(width: 10),
                           Text('Likes: $_likeCount'),
                         ],
                       ),
@@ -384,7 +383,7 @@ class _RecipeCardState extends State<RecipeCard> {
                   Navigator.push(
                     context, 
                     MaterialPageRoute(
-                      builder: (context) => Ingrident(),
+                      builder: (context) => const Ingrident(),
                     ),
                   );
                 },
@@ -445,8 +444,8 @@ class NewRecipeCard extends StatelessWidget {
     required this.time,
     required this.rating,
     required this.proimg,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -515,10 +514,10 @@ class NewRecipeCard extends StatelessWidget {
                               Row(
                                 children: [
                                   CircleAvatar(
-                                    backgroundImage: AssetImage("$proimg"),
+                                    backgroundImage: AssetImage(proimg),
                                     backgroundColor: Colors.orangeAccent,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   Text(
@@ -529,7 +528,7 @@ class NewRecipeCard extends StatelessWidget {
                                       fontSize: 14,
                                     ),
                                   ),
-                                  Expanded(
+                                  const Expanded(
                                     child: SizedBox(),
                                   ),
                                   Row(
@@ -538,7 +537,7 @@ class NewRecipeCard extends StatelessWidget {
                                       const SizedBox(width: 4),
                                       Text(
                                         time,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontWeight: FontWeight.w900,
                                         ),
                                       ),

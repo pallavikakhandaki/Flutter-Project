@@ -14,6 +14,10 @@ dependencies:
   flutter_switch: ^0.3.2
   google_fonts: ^6.2.1
   image_picker: ^1.1.2
+  cloud_firestore: ^5.5.0
+  firebase_core: ^3.8.0
+  firebase_auth: ^5.3.3
+  
 
 dev_dependencies:
   flutter_test:
@@ -52,3 +56,8 @@ flutter:
     - assets/ingredient.png
     - assets/cancel.svg
     - assets/procedure.png
+    - assets/images/chef.jpg
+    - assets/images/chef-hat.png
+    - assets/images/start page.jpg
+    - assets/images/google.png
+    - assets/images/facebook.png

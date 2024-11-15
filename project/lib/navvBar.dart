@@ -5,6 +5,8 @@ import 'package:project/navBarSetting.dart';
 import 'package:project/setting.dart';
 
 class NavBar extends StatefulWidget {
+  const NavBar({super.key});
+
   @override
   State<NavBar> createState() => _NavBarState();
 }
@@ -16,7 +18,7 @@ class _NavBarState extends State<NavBar> {
     return Drawer(
       child: Container(
         color: const Color.fromARGB(255, 58, 87, 57),
-        padding: EdgeInsets.only(top: 50, bottom: 30, left: 15, right: 15),
+        padding: const EdgeInsets.only(top: 50, bottom: 30, left: 15, right: 15),
         child: Column(
           children: [
             Container(
@@ -31,11 +33,11 @@ class _NavBarState extends State<NavBar> {
                         const Color.fromARGB(255, 8, 130, 79).withOpacity(0.5),
                     spreadRadius: 2,
                     blurRadius: 8,
-                    offset: Offset(0, 2), // changes position of shadow
+                    offset: const Offset(0, 2), // changes position of shadow
                   ),
                 ],
               ),
-              padding: EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8),
+              padding: const EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -56,19 +58,19 @@ class _NavBarState extends State<NavBar> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Container(
+                  SizedBox(
                     width: 170,
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           "Nadia Santini",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 193, 192, 192),
+                              color: Color.fromARGB(255, 193, 192, 192),
                               fontWeight: FontWeight.w800,
                               fontSize: 16),
                         ),
@@ -85,7 +87,7 @@ class _NavBarState extends State<NavBar> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Expanded(
@@ -93,29 +95,29 @@ class _NavBarState extends State<NavBar> {
                 child: Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.only(top: 15),
+                      padding: const EdgeInsets.only(top: 15),
                       height: 380,
                       width: 280,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "Brows Menu's",
                             style: TextStyle(
-                                color: const Color.fromARGB(255, 210, 209, 209),
+                                color: Color.fromARGB(255, 210, 209, 209),
                                 fontWeight: FontWeight.w700),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
-                          Container(
+                          SizedBox(
                             height: 310,
                             width: 280,
                             // color: Colors.amber,
                             child: Column(
                               children: [
                                 Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 15),
+                                  padding: const EdgeInsets.symmetric(horizontal: 15),
                                   width: 250,
                                   height: 50,
                                   decoration: BoxDecoration(
@@ -128,7 +130,7 @@ class _NavBarState extends State<NavBar> {
                                         spreadRadius: 2,
                                         blurRadius: 4,
                                         offset:
-                                            Offset(0, 2), // changes position of shadow
+                                            const Offset(0, 2), // changes position of shadow
                                       ),
                                     ],
                                   ),
@@ -136,20 +138,20 @@ class _NavBarState extends State<NavBar> {
                                     children: [
                                       SvgPicture.asset(
                                         "assets/profile-svgrepo-com.svg",
-                                        color: Color.fromARGB(255, 211, 211, 211),
+                                        color: const Color.fromARGB(255, 211, 211, 211),
                                       ),
                                       // Icon(
                                       //   Icons.settings,
                                       //   color: Color.fromARGB(255, 211, 211, 211),
                                       //   size: 30,
                                       // ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 10,
                                       ),
-                                      Text(
+                                      const Text(
                                         "Account & Profile",
                                         style: TextStyle(
-                                            color: const Color.fromARGB(
+                                            color: Color.fromARGB(
                                                 255, 211, 211, 211),
                                             fontSize: 18,
                                             fontWeight: FontWeight.w700),
@@ -157,7 +159,7 @@ class _NavBarState extends State<NavBar> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 15,
                                 ),
                                 GestureDetector(
@@ -170,7 +172,7 @@ class _NavBarState extends State<NavBar> {
                                     );
                                   },
                                   child: Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 15),
+                                    padding: const EdgeInsets.symmetric(horizontal: 15),
                                     width: 250,
                                     height: 50,
                                     decoration: BoxDecoration(
@@ -183,11 +185,11 @@ class _NavBarState extends State<NavBar> {
                                           spreadRadius: 2,
                                           blurRadius: 4,
                                           offset:
-                                              Offset(0, 2), // changes position of shadow
+                                              const Offset(0, 2), // changes position of shadow
                                         ),
                                       ],
                                     ),
-                                    child: Row(
+                                    child: const Row(
                                       children: [
                                         Icon(
                                           Icons.notifications,
@@ -200,7 +202,7 @@ class _NavBarState extends State<NavBar> {
                                         Text(
                                           "Notifications",
                                           style: TextStyle(
-                                              color: const Color.fromARGB(
+                                              color: Color.fromARGB(
                                                   255, 211, 211, 211),
                                               fontSize: 18,
                                               fontWeight: FontWeight.w700),
@@ -209,7 +211,7 @@ class _NavBarState extends State<NavBar> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 15,
                                 ),
                                 GestureDetector(
@@ -222,7 +224,7 @@ class _NavBarState extends State<NavBar> {
                                     );
                                   },
                                   child: Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 15),
+                                    padding: const EdgeInsets.symmetric(horizontal: 15),
                                     width: 250,
                                     height: 50,
                                     decoration: BoxDecoration(
@@ -235,7 +237,7 @@ class _NavBarState extends State<NavBar> {
                                           spreadRadius: 2,
                                           blurRadius: 4,
                                           offset:
-                                              Offset(0, 2), // changes position of shadow
+                                              const Offset(0, 2), // changes position of shadow
                                         ),
                                       ],
                                     ),
@@ -244,20 +246,20 @@ class _NavBarState extends State<NavBar> {
                                         SvgPicture.asset(
                                           "assets/signing-the-contract-svgrepo-com.svg",
                                           height: 26,
-                                          color: Color.fromARGB(255, 211, 211, 211),
+                                          color: const Color.fromARGB(255, 211, 211, 211),
                                         ),
                                         // Icon(
                                         //   Icons.settings,
                                         //   color: Color.fromARGB(255, 211, 211, 211),
                                         //   size: 30,
                                         // ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
-                                        Text(
+                                        const Text(
                                           "Terms & Conditions",
                                           style: TextStyle(
-                                              color: const Color.fromARGB(
+                                              color: Color.fromARGB(
                                                   255, 211, 211, 211),
                                               fontSize: 18,
                                               fontWeight: FontWeight.w700),
@@ -266,7 +268,7 @@ class _NavBarState extends State<NavBar> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 GestureDetector(
@@ -279,7 +281,7 @@ class _NavBarState extends State<NavBar> {
                                     );
                                   },
                                   child: Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 15),
+                                    padding: const EdgeInsets.symmetric(horizontal: 15),
                                     width: 250,
                                     height: 50,
                                     decoration: BoxDecoration(
@@ -292,7 +294,7 @@ class _NavBarState extends State<NavBar> {
                                           spreadRadius: 2,
                                           blurRadius: 4,
                                           offset:
-                                              Offset(0, 2), // changes position of shadow
+                                              const Offset(0, 2), // changes position of shadow
                                         ),
                                       ],
                                     ),
@@ -301,20 +303,20 @@ class _NavBarState extends State<NavBar> {
                                         SvgPicture.asset(
                                           "assets/support-svgrepo-com.svg",
                                           height: 28,
-                                          color: Color.fromARGB(255, 211, 211, 211),
+                                          color: const Color.fromARGB(255, 211, 211, 211),
                                         ),
                                         // Icon(
                                         //   Icons.settings,
                                         //   color: Color.fromARGB(255, 211, 211, 211),
                                         //   size: 30,
                                         // ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
-                                        Text(
+                                        const Text(
                                           "Help & Support",
                                           style: TextStyle(
-                                              color: const Color.fromARGB(
+                                              color: Color.fromARGB(
                                                   255, 211, 211, 211),
                                               fontSize: 18,
                                               fontWeight: FontWeight.w700),
@@ -323,7 +325,7 @@ class _NavBarState extends State<NavBar> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 15,
                                 ),
                                 GestureDetector(
@@ -336,7 +338,7 @@ class _NavBarState extends State<NavBar> {
                                     );
                                   },
                                   child: Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 15),
+                                    padding: const EdgeInsets.symmetric(horizontal: 15),
                                     width: 250,
                                     height: 50,
                                     decoration: BoxDecoration(
@@ -349,11 +351,11 @@ class _NavBarState extends State<NavBar> {
                                           spreadRadius: 2,
                                           blurRadius: 4,
                                           offset:
-                                              Offset(0, 2), // changes position of shadow
+                                              const Offset(0, 2), // changes position of shadow
                                         ),
                                       ],
                                     ),
-                                    child: Row(
+                                    child: const Row(
                                       children: [
                                         Icon(
                                           Icons.settings,
@@ -366,7 +368,7 @@ class _NavBarState extends State<NavBar> {
                                         Text(
                                           "Settings",
                                           style: TextStyle(
-                                              color: const Color.fromARGB(
+                                              color: Color.fromARGB(
                                                   255, 211, 211, 211),
                                               fontSize: 18,
                                               fontWeight: FontWeight.w700),
@@ -381,35 +383,35 @@ class _NavBarState extends State<NavBar> {
                         ],
                       ),
                     ),
-                    Divider(
-              color: const Color.fromARGB(255, 149, 148, 148),
+                    const Divider(
+              color: Color.fromARGB(255, 149, 148, 148),
               height: 20,
               thickness: 1,
               indent: 5,
               endIndent: 5,
             ),
             Container(
-              padding: EdgeInsets.only(top: 15),
+              padding: const EdgeInsets.only(top: 15),
               width: 280,
               height: 200,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "Your Activities",
                     style: TextStyle(
-                        color: const Color.fromARGB(255, 210, 209, 209),
+                        color: Color.fromARGB(255, 210, 209, 209),
                         fontWeight: FontWeight.w700),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Container(
+                  SizedBox(
                     width: 280,
                     child: Column(
                       children: [
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 15),
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
                           width: 250,
                           height: 50,
                           decoration: BoxDecoration(
@@ -422,11 +424,11 @@ class _NavBarState extends State<NavBar> {
                                 spreadRadius: 2,
                                 blurRadius: 4,
                                 offset:
-                                    Offset(0, 2), // changes position of shadow
+                                    const Offset(0, 2), // changes position of shadow
                               ),
                             ],
                           ),
-                          child: Row(
+                          child: const Row(
                             children: [
                               Icon(
                                 Icons.favorite,
@@ -439,7 +441,7 @@ class _NavBarState extends State<NavBar> {
                               Text(
                                 "Likes",
                                 style: TextStyle(
-                                    color: const Color.fromARGB(
+                                    color: Color.fromARGB(
                                         255, 211, 211, 211),
                                     fontSize: 18,
                                     fontWeight: FontWeight.w700),
@@ -447,11 +449,11 @@ class _NavBarState extends State<NavBar> {
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 15),
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
                           width: 250,
                           height: 50,
                           decoration: BoxDecoration(
@@ -464,11 +466,11 @@ class _NavBarState extends State<NavBar> {
                                 spreadRadius: 2,
                                 blurRadius: 4,
                                 offset:
-                                    Offset(0, 2), // changes position of shadow
+                                    const Offset(0, 2), // changes position of shadow
                               ),
                             ],
                           ),
-                          child: Row(
+                          child: const Row(
                             children: [
                               Icon(
                                 Icons.message,
@@ -481,7 +483,7 @@ class _NavBarState extends State<NavBar> {
                               Text(
                                 "Comments",
                                 style: TextStyle(
-                                    color: const Color.fromARGB(
+                                    color: Color.fromARGB(
                                         255, 211, 211, 211),
                                     fontSize: 18,
                                     fontWeight: FontWeight.w700),
@@ -495,11 +497,11 @@ class _NavBarState extends State<NavBar> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
-              padding: EdgeInsets.only(left: 15),
+              padding: const EdgeInsets.only(left: 15),
               height: 90,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -510,20 +512,20 @@ class _NavBarState extends State<NavBar> {
                       children: [
                         SvgPicture.asset(
                           "assets/moon-stars-svgrepo-com.svg",
-                          color: Color.fromARGB(255, 211, 211, 211),
+                          color: const Color.fromARGB(255, 211, 211, 211),
                           width: 30,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
-                        Text(
+                        const Text(
                           "Dark Mode",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 211, 211, 211),
+                              color: Color.fromARGB(255, 211, 211, 211),
                               fontSize: 18,
                               fontWeight: FontWeight.w700),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         FlutterSwitch(
@@ -544,8 +546,8 @@ class _NavBarState extends State<NavBar> {
                       ],
                     ),
                   ),
-                  Divider(
-                    color: const Color.fromARGB(255, 149, 148, 148),
+                  const Divider(
+                    color: Color.fromARGB(255, 149, 148, 148),
                     height: 20,
                     thickness: 1,
                     indent: 5,
@@ -556,16 +558,16 @@ class _NavBarState extends State<NavBar> {
                       children: [
                         SvgPicture.asset(
                           "assets/logout-svgrepo-com.svg",
-                          color: Color.fromARGB(255, 211, 211, 211),
+                          color: const Color.fromARGB(255, 211, 211, 211),
                           width: 30,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
-                        Text(
+                        const Text(
                           "Logout",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 211, 211, 211),
+                              color: Color.fromARGB(255, 211, 211, 211),
                               fontSize: 18,
                               fontWeight: FontWeight.w700),
                         )

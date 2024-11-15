@@ -3,24 +3,26 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Settings"),
+        title: const Text("Settings"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
             ListTile(
-              title: Text(
+              title: const Text(
                 "Edit Profile",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              leading: Icon(
+              leading: const Icon(
                 Icons.edit,
-                color: const Color.fromARGB(255, 8, 130, 79),
+                color: Color.fromARGB(255, 8, 130, 79),
               ),
               onTap: () {
                 // Navigate to the profile edit screen
@@ -31,13 +33,13 @@ class SettingsScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text(
+              title: const Text(
                 "Manage Notifications",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              leading: Icon(
+              leading: const Icon(
                 Icons.notifications,
-                color: const Color.fromARGB(255, 8, 130, 79),
+                color: Color.fromARGB(255, 8, 130, 79),
               ),
               onTap: () {
                 // Navigate to notification settings screen
@@ -48,13 +50,13 @@ class SettingsScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text(
+              title: const Text(
                 "Privacy Settings",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              leading: Icon(
+              leading: const Icon(
                 Icons.lock,
-                color: const Color.fromARGB(255, 8, 130, 79),
+                color: Color.fromARGB(255, 8, 130, 79),
               ),
               onTap: () {
                 // Navigate to privacy settings screen
@@ -65,13 +67,13 @@ class SettingsScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text(
+              title: const Text(
                 "Logout",
                 style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
               ),
-              leading: Icon(
+              leading: const Icon(
                 Icons.exit_to_app,
-                color: const Color.fromARGB(255, 8, 130, 79),
+                color: Color.fromARGB(255, 8, 130, 79),
               ),
               onTap: () {
                 // Handle logout functionality here
@@ -89,7 +91,7 @@ class SettingsScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text(
+          title: const Text(
             "Are you sure you want to logout?",
             style: TextStyle(
               fontSize: 20,
@@ -101,10 +103,10 @@ class SettingsScreen extends StatelessWidget {
                 // Perform logout logic here
                 Navigator.of(context).pop();
               },
-              child: Text(
+              child: const Text(
                 "Cancel",
                 style: TextStyle(
-                  color: const Color.fromRGBO(27, 94, 32, 1)
+                  color: Color.fromRGBO(27, 94, 32, 1)
                 ),
               ),
             ),
@@ -112,10 +114,10 @@ class SettingsScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text(
+              child: const Text(
                 "Logout",
                 style: TextStyle(
-                  color: const Color.fromRGBO(27, 94, 32, 1)
+                  color: Color.fromRGBO(27, 94, 32, 1)
                 ),
               ),
             ),
@@ -129,6 +131,8 @@ class SettingsScreen extends StatelessWidget {
 
 
 class EditProfileScreen extends StatefulWidget {
+  const EditProfileScreen({super.key});
+
   @override
   _EditProfileScreenState createState() => _EditProfileScreenState();
 }
@@ -140,8 +144,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
   // Function to pick an image from gallery or camera
   Future<void> _pickImage(ImageSource source) async {
-    final ImagePicker _picker = ImagePicker();
-    final pickedFile = await _picker.pickImage(source: source);
+    final ImagePicker picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: source);
     if (pickedFile != null) {
       setState(() {
         _image = File(pickedFile.path);
@@ -158,7 +162,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     print("Profile Updated: $name, $bio");
 
     // Show success message
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
       content: Text("Profile updated successfully!"),
     ));
   }
@@ -167,7 +171,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Edit Profile"),
+        title: const Text("Edit Profile"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -185,16 +189,16 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           ListTile(
-                            leading: Icon(Icons.camera_alt),
-                            title: Text("Take a photo"),
+                            leading: const Icon(Icons.camera_alt),
+                            title: const Text("Take a photo"),
                             onTap: () {
                               _pickImage(ImageSource.camera);
                               Navigator.pop(context);
                             },
                           ),
                           ListTile(
-                            leading: Icon(Icons.photo_library),
-                            title: Text("Choose from gallery"),
+                            leading: const Icon(Icons.photo_library),
+                            title: const Text("Choose from gallery"),
                             onTap: () {
                               _pickImage(ImageSource.gallery);
                               Navigator.pop(context);
@@ -209,46 +213,46 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   radius: 60,
                   backgroundImage: _image != null
                       ? FileImage(_image!)
-                      : AssetImage('assets/default_profile.png') as ImageProvider,
+                      : const AssetImage('assets/default_profile.png') as ImageProvider,
                   child: _image == null
-                      ? Icon(Icons.camera_alt, size: 30, color: Colors.white)
+                      ? const Icon(Icons.camera_alt, size: 30, color: Colors.white)
                       : null,
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Name TextField
             TextField(
               controller: _nameController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Name',
                 hintText: 'Enter your name',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Bio TextField
             TextField(
               controller: _bioController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Bio',
                 hintText: 'Tell us about yourself',
                 border: OutlineInputBorder(),
               ),
               maxLines: 3,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Save Button
             ElevatedButton(
               onPressed: _saveProfile,
-              child: Text("Save Profile"),
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 50),
-                textStyle: TextStyle(fontSize: 16),
+                minimumSize: const Size(double.infinity, 50),
+                textStyle: const TextStyle(fontSize: 16),
               ),
+              child: Text("Save Profile"),
             ),
           ],
         ),
@@ -259,6 +263,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
 
 class ManageNotificationScreen extends StatefulWidget {
+  const ManageNotificationScreen({super.key});
+
   @override
   _ManageNotificationScreenState createState() =>
       _ManageNotificationScreenState();
@@ -274,70 +280,70 @@ class _ManageNotificationScreenState extends State<ManageNotificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Manage Notifications"),
+        title: const Text("Manage Notifications"),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
             // Master toggle for notifications
             SwitchListTile(
-              title: Text("Enable Notifications"),
-              subtitle: Text("Turn notifications on or off"),
+              title: const Text("Enable Notifications"),
+              subtitle: const Text("Turn notifications on or off"),
               value: _isNotificationsEnabled,
               onChanged: (bool value) {
                 setState(() {
                   _isNotificationsEnabled = value;
                 });
               },
-              activeColor:  Color.fromARGB(255, 8, 130, 79),
+              activeColor:  const Color.fromARGB(255, 8, 130, 79),
             ),
-            if (_isNotificationsEnabled) Divider(),
+            if (_isNotificationsEnabled) const Divider(),
 
             // New recipe notifications
             if (_isNotificationsEnabled)
               SwitchListTile(
-                title: Text("New Recipe Notifications"),
-                subtitle: Text("Get notified when a new recipe is posted"),
+                title: const Text("New Recipe Notifications"),
+                subtitle: const Text("Get notified when a new recipe is posted"),
                 value: _newRecipeNotification,
                 onChanged: (bool value) {
                   setState(() {
                     _newRecipeNotification = value;
                   });
                 },
-                activeColor:  Color.fromARGB(255, 8, 130, 79),
+                activeColor:  const Color.fromARGB(255, 8, 130, 79),
               ),
-            if (_isNotificationsEnabled) Divider(),
+            if (_isNotificationsEnabled) const Divider(),
 
             // New follower notifications
             if (_isNotificationsEnabled)
               SwitchListTile(
-                title: Text("New Follower Notifications"),
-                subtitle: Text("Get notified when someone follows you"),
+                title: const Text("New Follower Notifications"),
+                subtitle: const Text("Get notified when someone follows you"),
                 value: _newFollowerNotification,
                 onChanged: (bool value) {
                   setState(() {
                     _newFollowerNotification = value;
                   });
                 },
-                activeColor:  Color.fromARGB(255, 8, 130, 79),
+                activeColor:  const Color.fromARGB(255, 8, 130, 79),
               ),
-            if (_isNotificationsEnabled) Divider(),
+            if (_isNotificationsEnabled) const Divider(),
 
             // Comment notifications
             if (_isNotificationsEnabled)
               SwitchListTile(
-                title: Text("Comment Notifications"),
-                subtitle: Text("Get notified when someone comments on your post"),
+                title: const Text("Comment Notifications"),
+                subtitle: const Text("Get notified when someone comments on your post"),
                 value: _commentNotification,
                 onChanged: (bool value) {
                   setState(() {
                     _commentNotification = value;
                   });
                 },
-                activeColor:  Color.fromARGB(255, 8, 130, 79),
+                activeColor:  const Color.fromARGB(255, 8, 130, 79),
               ),
-            if (_isNotificationsEnabled) Divider(),
+            if (_isNotificationsEnabled) const Divider(),
           ],
         ),
       ),
@@ -348,6 +354,8 @@ class _ManageNotificationScreenState extends State<ManageNotificationScreen> {
 
 
 class PrivacyScreen extends StatefulWidget {
+  const PrivacyScreen({super.key});
+
   @override
   _PrivacyScreenState createState() => _PrivacyScreenState();
 }
@@ -362,58 +370,58 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Privacy Settings"),
+        title: const Text("Privacy Settings"),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
             // Account Privacy toggle (Public/Private)
             SwitchListTile(
-              title: Text("Make Account Private"),
-              subtitle: Text("Set your account to private to restrict access."),
+              title: const Text("Make Account Private"),
+              subtitle: const Text("Set your account to private to restrict access."),
               value: _isAccountPrivate,
               onChanged: (bool value) {
                 setState(() {
                   _isAccountPrivate = value;
                 });
               },
-              activeColor:  Color.fromARGB(255, 8, 130, 79),
+              activeColor:  const Color.fromARGB(255, 8, 130, 79),
             ),
-            Divider(),
+            const Divider(),
 
             // Post Visibility (Public/Private)
             SwitchListTile(
-              title: Text("Make Posts Private"),
-              subtitle: Text("Set your posts to be visible only to you."),
+              title: const Text("Make Posts Private"),
+              subtitle: const Text("Set your posts to be visible only to you."),
               value: _isPostPrivate,
               onChanged: (bool value) {
                 setState(() {
                   _isPostPrivate = value;
                 });
               },
-              activeColor:  Color.fromARGB(255, 8, 130, 79),
+              activeColor:  const Color.fromARGB(255, 8, 130, 79),
             ),
-            Divider(),
+            const Divider(),
 
             // Hide Activity Status (Online/Last Seen)
             SwitchListTile(
-              title: Text("Hide Activity Status"),
-              subtitle: Text("Hide your online status and last seen time."),
+              title: const Text("Hide Activity Status"),
+              subtitle: const Text("Hide your online status and last seen time."),
               value: _hideActivityStatus,
               onChanged: (bool value) {
                 setState(() {
                   _hideActivityStatus = value;
                 });
               },
-              activeColor:  Color.fromARGB(255, 8, 130, 79),
+              activeColor:  const Color.fromARGB(255, 8, 130, 79),
             ),
-            Divider(),
+            const Divider(),
 
             // Blocked Users Management
             ListTile(
-              title: Text("Manage Blocked Users"),
-              subtitle: Text("View or unblock users you have blocked."),
+              title: const Text("Manage Blocked Users"),
+              subtitle: const Text("View or unblock users you have blocked."),
               onTap: () {
                 // Navigate to blocked users management screen
                 Navigator.push(
@@ -424,7 +432,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                 );
               },
             ),
-            Divider(),
+            const Divider(),
           ],
         ),
       ),
@@ -434,7 +442,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
 
 class BlockedUsersScreen extends StatefulWidget {
   final List<String> blockedUsers;
-  BlockedUsersScreen({required this.blockedUsers});
+  const BlockedUsersScreen({super.key, required this.blockedUsers});
 
   @override
   _BlockedUsersScreenState createState() => _BlockedUsersScreenState();
@@ -453,7 +461,7 @@ class _BlockedUsersScreenState extends State<BlockedUsersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Blocked Users"),
+        title: const Text("Blocked Users"),
       ),
       body: ListView.builder(
         itemCount: _blockedUsers.length,
@@ -461,7 +469,7 @@ class _BlockedUsersScreenState extends State<BlockedUsersScreen> {
           return ListTile(
             title: Text(_blockedUsers[index]),
             trailing: IconButton(
-              icon: Icon(Icons.delete),
+              icon: const Icon(Icons.delete),
               onPressed: () {
                 setState(() {
                   _blockedUsers.removeAt(index); // Unblock the user

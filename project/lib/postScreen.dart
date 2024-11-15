@@ -73,18 +73,18 @@ class _PostScreenState extends State<PostScreen> {
                     child: Center(
                       child: Row(
                         children: [
-                          Spacer(),
-                          Text(
+                          const Spacer(),
+                          const Text(
                             "Add Post",
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w900
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           GestureDetector(
                             child: Container(
-                              child: Text(
+                              child: const Text(
                                 "Post",
                                 style: TextStyle(
                                   fontSize: 18,
@@ -118,7 +118,7 @@ class _PostScreenState extends State<PostScreen> {
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                             ),
-                            contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                             fillColor: Colors.green,
                           ),
                         ),
@@ -150,16 +150,16 @@ class _PostScreenState extends State<PostScreen> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   ListTile(
-                                    leading: Icon(Icons.photo),
-                                    title: Text("Gallery"),
+                                    leading: const Icon(Icons.photo),
+                                    title: const Text("Gallery"),
                                     onTap: () {
                                       Navigator.of(context).pop();
                                       pickImage(ImageSource.gallery);
                                     },
                                   ),
                                   ListTile(
-                                    leading: Icon(Icons.camera_alt),
-                                    title: Text("Camera"),
+                                    leading: const Icon(Icons.camera_alt),
+                                    title: const Text("Camera"),
                                     onTap: () {
                                       Navigator.of(context).pop();
                                       pickImage(ImageSource.camera);
@@ -169,8 +169,8 @@ class _PostScreenState extends State<PostScreen> {
                               ),
                             );
                           },
-                          icon: Icon(Icons.image),
-                          label: Text("Pick an Image"),
+                          icon: const Icon(Icons.image),
+                          label: const Text("Pick an Image"),
                         ),
                   const SizedBox(height: 20),
               
@@ -191,9 +191,9 @@ class _PostScreenState extends State<PostScreen> {
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                             ),
-                            contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                             suffixIcon: IconButton(
-                              icon: Icon(Icons.add),
+                              icon: const Icon(Icons.add),
                               onPressed: addIngredient,
                             ),
                           ),
@@ -227,7 +227,7 @@ class _PostScreenState extends State<PostScreen> {
                                 child: Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 5),
                                   decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 97, 160, 101),
+                                  color: const Color.fromARGB(255, 97, 160, 101),
                                   borderRadius: BorderRadius.circular(8),
                                   border: Border.all(color: const Color.fromRGBO(27, 94, 32, 1)),
                                 ),
@@ -239,7 +239,7 @@ class _PostScreenState extends State<PostScreen> {
                                       padding: const EdgeInsets.only(left: 5),
                                       child: Text(
                                         ingredient,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.w700
                                         ),
@@ -277,7 +277,7 @@ class _PostScreenState extends State<PostScreen> {
                         child: TextField(
                           textCapitalization: TextCapitalization.words,
                           controller: procedureController,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16
                           ),
                           decoration: InputDecoration(
@@ -285,9 +285,9 @@ class _PostScreenState extends State<PostScreen> {
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                             ),
-                            contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                             suffixIcon: IconButton(
-                              icon: Icon(Icons.add),
+                              icon: const Icon(Icons.add),
                               onPressed: addProcedure,
                             ),
                           ),
@@ -310,7 +310,7 @@ class _PostScreenState extends State<PostScreen> {
                   ),
                   const SizedBox(height: 10,),
                   if (procedures.isNotEmpty)
-                    Container(
+                    SizedBox(
                       width: MediaQuery.of(context).size.width,
                       child: SingleChildScrollView(
                         child: Wrap(
@@ -322,7 +322,7 @@ class _PostScreenState extends State<PostScreen> {
                                 // width: MediaQuery.of(context).size.width,
                                 padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 5),
                                 decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 97, 160, 101),
+                                color: const Color.fromARGB(255, 97, 160, 101),
                                 borderRadius: BorderRadius.circular(8),
                                 border: Border.all(color: const Color.fromRGBO(27, 94, 32, 1)),
                               ),
@@ -335,7 +335,7 @@ class _PostScreenState extends State<PostScreen> {
                                       padding: const EdgeInsets.only(left: 5),
                                       child: Text(
                                         procedure,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.w700
                                         ),

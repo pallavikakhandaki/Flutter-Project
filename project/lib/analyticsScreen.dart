@@ -57,7 +57,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
     required String imageUrl,
     required String rank,
   }) {
-    return Container(
+    return SizedBox(
       height: height,
       width: 105,
       child: Column(
@@ -83,7 +83,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
               ),
               const SizedBox(height: 10),
               // Avatar image
-              Container(
+              SizedBox(
                 height: 95,
                 child: Center(
                   child: Container(
@@ -128,7 +128,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [Colors.purple, Colors.orange]),
@@ -137,7 +137,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
       ),
       child: Column(
         children: [
-          Container(
+          SizedBox(
             height: 40,
             child: const Text(
               "Rank",
@@ -169,7 +169,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                       children: [
                         Row(
                           children: [
-                            Container(
+                            SizedBox(
                               height: 40,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
@@ -187,7 +187,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                             ),
                           ],
                         ),
-                        Container(
+                        SizedBox(
                           width: 30,
                           child: Center(
                             child: Text(

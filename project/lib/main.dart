@@ -1,7 +1,9 @@
 import 'dart:developer';
 
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:project/login.dart';
 import 'analyticsScreen.dart';
 import 'navvBar.dart';
 import 'postScreen.dart';
@@ -10,7 +12,16 @@ import 'save_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'homepage.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyA1TEVTe8-fRMEmArLvaP3vHs5lp7adROM", 
+      appId: "1:656947336984:android:497f2402f8c674549eb06d", 
+      messagingSenderId: "656947336984", 
+      projectId: "recipeapp-cdc9c"
+    )
+  );
   runApp(const MyApp());
 }
 
@@ -21,7 +32,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'RecipeChat',
-      home: MyHomePage(),
+      home: LoginPage(),
     );
   }
 }
@@ -112,8 +123,8 @@ class _MyHomePageState extends State<MyHomePage> {
               removeMargins: false,
               bottomBarWidth: 500,
               durationInMilliSeconds: 300,
-              bottomBarItems: [
-                const BottomBarItem(
+              bottomBarItems: const[
+                BottomBarItem(
                   inActiveItem: Icon(
                     Icons.home_filled,
                     color: Colors.grey,
@@ -124,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   itemLabel: 'Page 1',
                 ),
-                const BottomBarItem(
+                BottomBarItem(
                   inActiveItem: Icon(
                     Icons.star,
                     color: Colors.grey,
@@ -137,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
 
                 ///svg example
-                const BottomBarItem(
+                BottomBarItem(
                   inActiveItem: Icon(
                     Icons.add_box_rounded,
                     color: Colors.grey,
@@ -146,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   //   'assets/icons8-search.svg',
                   //   color: Colors.grey,
                   // ),
-                  activeItem: const Icon(
+                  activeItem: Icon(
                     Icons.add,
                     color: Colors.white,
                     weight: 800,
@@ -157,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   // ),
                   itemLabel: 'Page 3',
                 ),
-                const BottomBarItem(
+                BottomBarItem(
                   inActiveItem: Icon(
                     Icons.leaderboard,
                     color: Colors.grey,
@@ -168,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   itemLabel: 'Page 4',
                 ),
-                const BottomBarItem(
+                BottomBarItem(
                   inActiveItem: Icon(
                     Icons.person,
                     color: Colors.grey,

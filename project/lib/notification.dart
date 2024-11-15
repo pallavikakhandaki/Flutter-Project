@@ -66,7 +66,7 @@ class _NotifyState extends State<Notify> {
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -154,8 +154,8 @@ class _NotifyState extends State<Notify> {
               ],
             ),
           ),
-          SizedBox(height: 10),
-          Container(
+          const SizedBox(height: 10),
+          SizedBox(
               width: 380,
               height: 550,
               child: ListView.builder(
@@ -166,7 +166,7 @@ class _NotifyState extends State<Notify> {
                       children: [
                         Container(
                             padding:
-                                EdgeInsets.only(top: 8, left: 15, right: 15),
+                                const EdgeInsets.only(top: 8, left: 15, right: 15),
                             height: 95,
                             width: 360,
                             decoration: BoxDecoration(
@@ -174,7 +174,7 @@ class _NotifyState extends State<Notify> {
                                 borderRadius: BorderRadius.circular(15)),
                             child: Row(
                               children: [
-                                Container(
+                                SizedBox(
                                   height: 95,
                                   width: 300,
                                   child: Column(
@@ -183,22 +183,22 @@ class _NotifyState extends State<Notify> {
                                     children: [
                                       Text(
                                         notification["title"],
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontWeight: FontWeight.w800,
                                             fontSize: 12),
                                       ),
-                                      SizedBox(height: 4),
+                                      const SizedBox(height: 4),
                                       Container(
                                         child: Text(
                                           notification["message"],
-                                          style: TextStyle(
-                                              color: const Color.fromARGB(
+                                          style: const TextStyle(
+                                              color: Color.fromARGB(
                                                   255, 126, 125, 125),
                                               fontSize: 13,
                                               fontWeight: FontWeight.w600),
                                         ),
                                       ),
-                                      SizedBox(height: 4),
+                                      const SizedBox(height: 4),
                                       Text(
                                         notification["time"],
                                         style: TextStyle(
@@ -209,7 +209,7 @@ class _NotifyState extends State<Notify> {
                                     ],
                                   ),
                                 ),
-                                Container(
+                                SizedBox(
                                   width: 30,
                                   child: Column(
                                     children: [
@@ -235,7 +235,7 @@ class _NotifyState extends State<Notify> {
                                 )
                               ],
                             )),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                       ],
                     );
                   })),

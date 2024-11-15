@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NotificationSettingsPage extends StatefulWidget {
+  const NotificationSettingsPage({super.key});
+
   @override
   _NotificationSettingsPageState createState() => _NotificationSettingsPageState();
 }
@@ -18,7 +20,7 @@ class _NotificationSettingsPageState extends State<NotificationSettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Notification Settings",
           style: TextStyle(
             fontSize: 25,
@@ -31,21 +33,21 @@ class _NotificationSettingsPageState extends State<NotificationSettingsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Manage Notifications",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ListTile(
               leading: Icon(
                 Icons.notifications,
                 size: 35,
                 color: _isNotificationOn ? Colors.green : Colors.grey,
               ),
-              title: Text(
+              title: const Text(
                 "Enable Notifications",
                 style: TextStyle(
                   fontSize: 16,
@@ -55,21 +57,21 @@ class _NotificationSettingsPageState extends State<NotificationSettingsPage> {
               trailing: Switch(
                 value: _isNotificationOn,
                 onChanged: _toggleNotification,
-                activeColor: Color.fromRGBO(27, 94, 32, 1),
+                activeColor: const Color.fromRGBO(27, 94, 32, 1),
                 inactiveThumbColor: Colors.grey,
               ),
             ),
-            SizedBox(height: 20),
-            Divider(),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Divider(),
+            const SizedBox(height: 20),
+            const Text(
               "Notification Preferences",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               "• Receive daily updates about the latest features.\n"
               "• Get notified when someone likes your posts.\n"
@@ -86,11 +88,13 @@ class _NotificationSettingsPageState extends State<NotificationSettingsPage> {
 
 
 class TermsAndConditionsScreen extends StatelessWidget {
+  const TermsAndConditionsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Terms and Conditions",
           style: TextStyle(
             fontSize: 25,
@@ -125,16 +129,16 @@ If you have any questions regarding these terms, please feel free to contact us 
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Handle accept terms action here
                 Navigator.pop(context);
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromRGBO(27, 94, 32, 1),
+                backgroundColor: const Color.fromRGBO(27, 94, 32, 1),
               ),
-              child: Text(
+              child: const Text(
                 "Accept",
                 style: TextStyle(
                   color: Colors.white,
@@ -151,11 +155,13 @@ If you have any questions regarding these terms, please feel free to contact us 
 
 
 class HelpAndSupportScreen extends StatelessWidget {
+  const HelpAndSupportScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Help & Support",
           style: TextStyle(
             fontSize: 25,
@@ -170,19 +176,19 @@ class HelpAndSupportScreen extends StatelessWidget {
           children: [
             // FAQ Section
             ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.help, 
-                color: const Color.fromARGB(255, 8, 130, 79),
+                color: Color.fromARGB(255, 8, 130, 79),
                 size: 30,
               ),
-              title: Text(
+              title: const Text(
                 "FAQs",
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500
                 ),
               ),
-              subtitle: Text("Common questions and answers"),
+              subtitle: const Text("Common questions and answers"),
               onTap: () {
                 Navigator.push(
                   context, 
@@ -192,23 +198,23 @@ class HelpAndSupportScreen extends StatelessWidget {
                 );
               },
             ),
-            Divider(),
+            const Divider(),
 
             // Contact Support Section
             ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.support_agent, 
-                color: const Color.fromARGB(255, 8, 130, 79),
+                color: Color.fromARGB(255, 8, 130, 79),
                 size: 30,
               ),
-              title: Text(
+              title: const Text(
                 "Contact Support",
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500
                 ),
               ),
-              subtitle: Text("Get in touch with our support team"),
+              subtitle: const Text("Get in touch with our support team"),
               onTap: () {
                 Navigator.push(
                   context, 
@@ -218,23 +224,23 @@ class HelpAndSupportScreen extends StatelessWidget {
                 );
               },
             ),
-            Divider(),
+            const Divider(),
 
             // App Guide Section
             ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.book, 
-                color: const Color.fromARGB(255, 8, 130, 79),
+                color: Color.fromARGB(255, 8, 130, 79),
                 size: 30,
               ),
-              title: Text(
+              title: const Text(
                 "App Guide",
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500
                 ),
               ),
-              subtitle: Text("Learn how to use the app features"),
+              subtitle: const Text("Learn how to use the app features"),
               onTap: () {
                 Navigator.push(
                   context, 
@@ -244,23 +250,23 @@ class HelpAndSupportScreen extends StatelessWidget {
                 );
               },
             ),
-            Divider(),
+            const Divider(),
 
             // Send Feedback Section
             ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.feedback, 
-                color: const Color.fromARGB(255, 8, 130, 79),
+                color: Color.fromARGB(255, 8, 130, 79),
                 size: 30,
               ),
-              title: Text(
+              title: const Text(
                 "Send Feedback",
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500
                 ),
               ),
-              subtitle: Text("Share your thoughts with us"),
+              subtitle: const Text("Share your thoughts with us"),
               onTap: () {
                 Navigator.push(
                   context, 
@@ -270,10 +276,10 @@ class HelpAndSupportScreen extends StatelessWidget {
                 );
               },
             ),
-            Spacer(),
+            const Spacer(),
 
             // Version Information
-            Center(
+            const Center(
               child: Text(
                 "App Version 1.0.0",
                 style: TextStyle(fontSize: 14, color: Colors.grey),
@@ -310,11 +316,13 @@ class FAQScreen extends StatelessWidget {
     },
   ];
 
+  FAQScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "FAQs",
           style: TextStyle(
             fontSize: 25,
@@ -328,7 +336,7 @@ class FAQScreen extends StatelessWidget {
           return ExpansionTile(
             title: Text(
               faqs[index]["question"]!,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 16
               ),
@@ -337,7 +345,7 @@ class FAQScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 faqs[index]["answer"]!,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w300
                 ),
@@ -351,11 +359,13 @@ class FAQScreen extends StatelessWidget {
 }
 
 class ContactSupportScreen extends StatelessWidget {
+  const ContactSupportScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Contact Support",
           style: TextStyle(
             fontSize: 25,
@@ -363,8 +373,8 @@ class ContactSupportScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(35.0),
+      body: const Padding(
+        padding: EdgeInsets.all(35.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -392,11 +402,13 @@ class ContactSupportScreen extends StatelessWidget {
 
 
 class AppGuideScreen extends StatelessWidget {
+  const AppGuideScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "App Guide",
           style: TextStyle(
             fontSize: 25,
@@ -405,7 +417,7 @@ class AppGuideScreen extends StatelessWidget {
         ),
       ),
       body: ListView(
-        children: [
+        children: const [
           ExpansionTile(
             title: Text(
               "How to post a new recipe?",
@@ -416,7 +428,7 @@ class AppGuideScreen extends StatelessWidget {
             ),
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text(
                   "To post a new recipe, go to the 'Add Post' screen using the navigation bar. "
                   "Enter the title, ingredients, and procedure, then click 'Post' to share it with others.",
@@ -438,7 +450,7 @@ class AppGuideScreen extends StatelessWidget {
             ),
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text(
                   "To edit your profile, go to 'Profile' in the navigation bar, "
                   "then tap on 'Edit Profile' to update your information such as profile picture, bio, and contact details.",
@@ -460,7 +472,7 @@ class AppGuideScreen extends StatelessWidget {
             ),
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text(
                   "To follow someone, visit their profile and tap the 'Follow' button. "
                   "To unfollow, go to their profile again and tap 'Unfollow'.",
@@ -482,7 +494,7 @@ class AppGuideScreen extends StatelessWidget {
             ),
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text(
                   "To search for recipes, go to the 'Search' tab in the navigation bar. "
                   "You can search by recipe name, ingredients, or even by chef names.",
@@ -504,7 +516,7 @@ class AppGuideScreen extends StatelessWidget {
             ),
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text(
                   "Go to 'Settings' and select 'Notifications'. "
                   "Toggle notifications on or off, and customize which alerts you want to receive.",
@@ -524,6 +536,8 @@ class AppGuideScreen extends StatelessWidget {
 
 
 class SendFeedbackScreen extends StatefulWidget {
+  const SendFeedbackScreen({super.key});
+
   @override
   _SendFeedbackScreenState createState() => _SendFeedbackScreenState();
 }
@@ -535,7 +549,7 @@ class _SendFeedbackScreenState extends State<SendFeedbackScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Send Feedback")),
+      appBar: AppBar(title: const Text("Send Feedback")),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -543,23 +557,23 @@ class _SendFeedbackScreenState extends State<SendFeedbackScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Your Feedback"),
+              const Text("Your Feedback"),
               TextFormField(
                 maxLines: 5,
                 onChanged: (value) => feedback = value,
-                decoration: InputDecoration(hintText: "Write your feedback here..."),
+                decoration: const InputDecoration(hintText: "Write your feedback here..."),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     // Handle feedback submission
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("Feedback submitted successfully!"),
                     ));
                   }
                 },
-                child: Text("Submit"),
+                child: const Text("Submit"),
               ),
             ],
           ),
